@@ -7,9 +7,9 @@ This packages helps to add iOS build and distribution functionality in the build
 - Upload archive to the App Store / Test Flight 
 
 # Dependencies
-- [UniTools CLI](https://github.com/Rinal/unitools-cli)
-- [UniTools IO](https://github.com/Rinal/unitools-io)
-- [UniTools Build](https://github.com/Rinal/unitools-build)
+- [UniTools CLI](https://github.com/UniToolsTeam/unitools-cli)
+- [UniTools IO](https://github.com/UniToolsTeam/unitools-io)
+- [UniTools Build](https://github.com/UniToolsTeam/unitools-build)
 
 
 # Installation
@@ -28,10 +28,10 @@ Add the following to `Packages/manifest.json` where x.x.x the version (tag) chec
 ```
 {
   "dependencies": {
-    "com.unitools.cli": "https://github.com/Rinal/unitools-cli.git#x.x.x",
-    "com.unitools.io": "https://github.com/Rinal/unitools-io.git#x.x.x",
-    "com.unitools.build": "https://github.com/Rinal/unitools-build.git#x.x.x",
-    "com.unitools.build.ios": "https://github.com/Rinal/unitools-build-ios.git#x.x.x",
+    "com.unitools.cli": "https://github.com/UniToolsTeam/unitools-cli.git#x.x.x",
+    "com.unitools.io": "https://github.com/UniToolsTeam/unitools-io.git#x.x.x",
+    "com.unitools.build": "https://github.com/UniToolsTeam/unitools-build.git#x.x.x",
+    "com.unitools.build.ios": "https://github.com/UniToolsTeam/unitools-build-ios.git#x.x.x",
     "...": "..."
   }
 }
