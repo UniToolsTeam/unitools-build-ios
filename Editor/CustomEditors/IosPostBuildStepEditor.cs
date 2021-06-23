@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_IOS
 namespace UniTools.Build.iOS
 {
     public abstract class IosPostBuildStepEditor : Editor
@@ -52,3 +53,4 @@ namespace UniTools.Build.iOS
         }
     }
 }
+#endif

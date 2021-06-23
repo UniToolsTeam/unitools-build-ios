@@ -1,4 +1,5 @@
 using System;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
 using UnityEngine;
 
@@ -13,3 +14,4 @@ namespace UniTools.Build.iOS
         public abstract void AddTo(PlistElementDict plistElementDict);
     }
 }
+#endif

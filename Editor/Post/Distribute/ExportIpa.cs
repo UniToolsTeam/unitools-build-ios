@@ -2,6 +2,7 @@ using System.IO;
 using System.Threading.Tasks;
 using UniTools.CLI;
 using UniTools.IO;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
 using UnityEngine;
 
@@ -55,3 +56,4 @@ namespace UniTools.Build.iOS
         }
     }
 }
+#endif

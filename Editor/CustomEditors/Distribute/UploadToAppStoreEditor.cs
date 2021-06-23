@@ -1,4 +1,5 @@
 using UnityEditor;
+#if UNITY_IOS
 
 namespace UniTools.Build.iOS
 {
@@ -24,3 +25,4 @@ namespace UniTools.Build.iOS
         }
     }
 }
+#endif

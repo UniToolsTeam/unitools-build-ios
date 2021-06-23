@@ -1,5 +1,6 @@
 using System.IO;
 using System.Text.RegularExpressions;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
 
 namespace UniTools.Build.iOS
@@ -35,3 +36,4 @@ namespace UniTools.Build.iOS
         }
     }
 }
+#endif

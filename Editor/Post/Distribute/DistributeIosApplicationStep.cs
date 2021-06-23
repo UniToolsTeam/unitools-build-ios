@@ -1,4 +1,5 @@
 using System.IO;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
 using UnityEngine;
 
@@ -37,3 +38,4 @@ namespace UniTools.Build.iOS
         }
     }
 }
+#endif

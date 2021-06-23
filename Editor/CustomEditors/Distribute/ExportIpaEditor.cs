@@ -1,7 +1,8 @@
 using UnityEditor;
-
+#if UNITY_IOS
 namespace UniTools.Build.iOS
 {
+    
     [CustomEditor(typeof(ExportIpa))]
     public sealed class ExportIpaEditor : DistributeIosApplicationStepEditor
     {
@@ -27,3 +28,4 @@ namespace UniTools.Build.iOS
         }
     }
 }
+#endif
