@@ -1,5 +1,5 @@
 using UnityEditor;
-#if UNITY_IOS
+
 namespace UniTools.Build.iOS
 {
     [CustomEditor(typeof(ModifyInfoPlist))]
@@ -12,4 +12,3 @@ namespace UniTools.Build.iOS
         }
     }
 }
-#endif

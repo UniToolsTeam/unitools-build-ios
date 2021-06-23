@@ -1,6 +1,5 @@
 using UnityEditor;
 
-#if UNITY_IOS
 namespace UniTools.Build.iOS
 {
     [CustomEditor(typeof(Archive))]
@@ -35,4 +34,3 @@ namespace UniTools.Build.iOS
         }
     }
 }
-#endif

@@ -7,11 +7,10 @@ using UnityEditor.iOS.Xcode;
 namespace UniTools.Build.iOS
 {
     [Serializable]
-
     public abstract class SerializablePlistElement<TValue>
         : IPlistElement
     {
-        [SerializeField] protected   string Key;
+        [SerializeField] protected string Key;
         [SerializeField] protected TValue Value;
 
 #if UNITY_IOS

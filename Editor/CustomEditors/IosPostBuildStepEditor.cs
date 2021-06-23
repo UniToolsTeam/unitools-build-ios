@@ -1,7 +1,7 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
-#if UNITY_IOS
 namespace UniTools.Build.iOS
 {
     public abstract class IosPostBuildStepEditor : Editor
@@ -19,6 +19,7 @@ namespace UniTools.Build.iOS
 
         public override void OnInspectorGUI()
         {
+#if UNITY_IOS
             EditorGUILayout.HelpBox("Make sure that certificate added to the Keychain", MessageType.Info);
             bool load = false;
 
@@ -50,7 +51,9 @@ namespace UniTools.Build.iOS
             }
 
             serializedObject.ApplyModifiedProperties();
+#else
+            throw new Exception($"{nameof(IosPostBuildStepEditor)}: unsupported platform for {m_teamId}, {m_provisioningProfileName}, {m_provisioningProfileUuid}");
+#endif
         }
     }
 }
-#endif
