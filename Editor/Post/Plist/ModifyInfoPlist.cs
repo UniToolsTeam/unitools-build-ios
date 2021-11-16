@@ -1,8 +1,11 @@
-using System.Collections.Generic;
-using System.IO;
+using System;
 using System.Threading.Tasks;
-using UnityEditor.iOS.Xcode;
 using UnityEngine;
+using System.IO;
+using System.Collections.Generic;
+#if UNITY_IOS
+using UnityEditor.iOS.Xcode;
+#endif
 
 namespace UniTools.Build.iOS
 {
@@ -21,6 +24,7 @@ namespace UniTools.Build.iOS
         {
             await Task.CompletedTask;
 
+#if UNITY_IOS
             List<IPlistElement> elements = new List<IPlistElement>();
             if (m_bool != null)
             {
@@ -51,6 +55,9 @@ namespace UniTools.Build.iOS
             }
 
             File.WriteAllText(plistPath, plist.WriteToString());
+#else
+            throw new Exception($"{nameof(ModifyInfoPlist)}: unsupported platform for {m_bool}, {m_float}, {m_int}, {m_string}");
+#endif
         }
     }
 }

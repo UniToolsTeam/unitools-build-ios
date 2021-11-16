@@ -1,5 +1,8 @@
+using System;
 using System.IO;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
+#endif
 using UnityEngine;
 
 namespace UniTools.Build.iOS
@@ -15,8 +18,12 @@ namespace UniTools.Build.iOS
             const string fileName = "ExportOptions.plist";
 
             return Path.Combine(root, fileName);
+#if !UNITY_IOS
+            throw new Exception($"{nameof(DistributeIosApplicationStep)}: unsupported platform for {m_bundleIdentifier}, {m_uploadBitcode}, {m_uploadSymbols}");
+#endif
         }
 
+#if UNITY_IOS
         protected PlistDocument CreateExportOptions()
         {
             PlistDocument plist = new PlistDocument();
@@ -35,5 +42,6 @@ namespace UniTools.Build.iOS
 
             return plist;
         }
+#endif
     }
 }

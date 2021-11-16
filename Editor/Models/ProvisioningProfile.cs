@@ -1,6 +1,9 @@
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
+#endif
 
 namespace UniTools.Build.iOS
 {
@@ -17,6 +20,7 @@ namespace UniTools.Build.iOS
 
         public static ProvisioningProfile Load(string pathToFile)
         {
+#if UNITY_IOS
             const string patternPlist = "<plist(.*)<\\/plist>";
 
             ProvisioningProfile profile = new ProvisioningProfile();
@@ -32,6 +36,9 @@ namespace UniTools.Build.iOS
             profile.TeamIdentifier = plistDocument.root["TeamIdentifier"].AsArray().values[0].AsString();
 
             return profile;
+#else
+            throw new Exception($"{nameof(ProvisioningProfile)}: unsupported platform.");
+#endif
         }
     }
 }

@@ -1,8 +1,11 @@
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using UniTools.CLI;
 using UniTools.IO;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
+#endif
 using UnityEngine;
 
 namespace UniTools.Build.iOS
@@ -20,7 +23,7 @@ namespace UniTools.Build.iOS
         public override async Task Execute(string pathToBuiltProject)
         {
             await Task.CompletedTask;
-
+#if UNITY_IOS
             PlistDocument exportOptions = CreateExportOptions();
             string exportOptionsPath = ExportOptionsPath(pathToBuiltProject);
 
@@ -52,6 +55,9 @@ namespace UniTools.Build.iOS
             {
                 throw new PostBuildStepFailedException($"{nameof(Archive)}: Failed! {result.ToString()}");
             }
+#else
+            throw new Exception($"{nameof(ExportIpa)}: unsupported platform for {m_archivePath}, {m_outputPath}, {m_method}");
+#endif
         }
     }
 }

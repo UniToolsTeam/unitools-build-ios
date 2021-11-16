@@ -2,6 +2,7 @@ using UnityEditor;
 
 namespace UniTools.Build.iOS
 {
+    
     [CustomEditor(typeof(ExportIpa))]
     public sealed class ExportIpaEditor : DistributeIosApplicationStepEditor
     {
