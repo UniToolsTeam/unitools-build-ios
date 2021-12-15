@@ -20,7 +20,9 @@ namespace UniTools.Build.iOS
 
         public override void OnInspectorGUI()
         {
+#if UNITY_IOS
             base.OnInspectorGUI();
+#endif
             EditorGUILayout.PropertyField(m_method);
             EditorGUILayout.PropertyField(m_archivePath);
             EditorGUILayout.PropertyField(m_outputPath);
