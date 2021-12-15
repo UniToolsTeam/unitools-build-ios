@@ -1,7 +1,7 @@
 {
   "displayName": "UniTools.Build.iOS",
   "name": "com.unitools.build.ios",
-  "version": "0.0.2-preview",
+  "version": "0.0.3-preview",
   "unity": "2019.1",
   "description": "Part of the Customizable Build Pipeline tool for the iOS build target",
   "keywords": [
