@@ -18,6 +18,7 @@ namespace UniTools.Build.iOS
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
+
             EditorGUILayout.PropertyField(m_archivePath);
             EditorGUILayout.PropertyField(m_outputPath);
             serializedObject.ApplyModifiedProperties();
