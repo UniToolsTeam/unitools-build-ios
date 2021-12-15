@@ -22,9 +22,9 @@ namespace UniTools.Build.iOS
         public override void OnInspectorGUI()
         {
             EditorGUILayout.HelpBox("Use Development Provisioning Profile for the Archive step.", MessageType.Info);
-#if UNITY_IOS
+
             base.OnInspectorGUI();
-#endif
+
             EditorGUILayout.PropertyField(m_projectPath);
             EditorGUILayout.PropertyField(m_outputPath);
             EditorGUILayout.PropertyField(m_scheme);
